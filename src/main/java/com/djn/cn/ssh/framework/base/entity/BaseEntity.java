@@ -36,7 +36,7 @@ public class BaseEntity implements Serializable{
     private Date modifyDate;  
       
     @Id  
-    @Column(length = 40, nullable = true)  
+    @Column(length = 36, nullable = true)  
     @GeneratedValue(generator = "uuid")  
     @GenericGenerator(name = "uuid", strategy = "uuid")  
     public String getId() {  
