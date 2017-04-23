@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
+<title>首页2</title>
 </head>
 <body>
-	首页主页 
+	首页主页2 
 </body>
 </html>
