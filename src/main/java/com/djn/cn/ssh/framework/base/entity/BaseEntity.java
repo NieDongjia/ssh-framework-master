@@ -1,13 +1,17 @@
 package com.djn.cn.ssh.framework.base.entity;
 
 import java.io.Serializable;  
-import java.util.Date;  
-  
-import javax.persistence.Column;  
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;  
-import javax.persistence.Id;  
-import javax.persistence.MappedSuperclass;  
-  
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
 import org.hibernate.annotations.GenericGenerator;  
   
 
@@ -22,19 +26,21 @@ import org.hibernate.annotations.GenericGenerator;
 @MappedSuperclass  
 public class BaseEntity implements Serializable{  
 	private static final long serialVersionUID = 1L;
-	/** 
-     * ID 
-     */  
+	/** ID */  
     private String id;  
-    /** 
-     * 创建日期 
-     */  
-    private Date createDate;  
-    /** 
-     * 修改日期 
-     */  
-    private Date modifyDate;  
-      
+    /**  创建日期  */  
+    private Date createDate = new Date();  
+    /**  最后修改日期 */  
+    private Date lastUpdateTime;  
+    /** 描述 */
+    private String description;
+    /** 名称*/
+    private String name;
+    /**创建者*/
+    private UserInfo Creator;
+    /**最后修改者*/
+    private UserInfo lastUpdateUser;
+    
     @Id  
     @Column(length = 36, nullable = true)  
     @GeneratedValue(generator = "uuid")  
@@ -56,15 +62,50 @@ public class BaseEntity implements Serializable{
         this.createDate = createDate;  
     }  
   
-    public Date getModifyDate() {  
-        return modifyDate;  
-    }  
-  
-    public void setModifyDate(Date modifyDate) {  
-        this.modifyDate = modifyDate;  
-    }  
-  
-    @Override  
+    public Date getLastUpdateTime() {
+		return lastUpdateTime;
+	}
+
+	public void setLastUpdateTime(Date lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @JoinColumn(name="creatorId")
+	public UserInfo getCreator() {
+		return Creator;
+	}
+
+	public void setCreator(UserInfo creator) {
+		Creator = creator;
+	}
+
+    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @JoinColumn(name="lastUpdateUserId")
+	public UserInfo getLastUpdateUser() {
+		return lastUpdateUser;
+	}
+
+	public void setLastUpdateUser(UserInfo lastUpdateUser) {
+		this.lastUpdateUser = lastUpdateUser;
+	}
+
+	@Override  
     public int hashCode() {  
         return id == null ? System.identityHashCode(this) : id.hashCode();  
     }  

@@ -7,12 +7,10 @@ import java.lang.reflect.Type;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import com.djn.cn.ssh.framework.base.dao.IBaseDao;
 
-@Repository
 public class BaseDaoImpl<T, PK extends Serializable> implements IBaseDao<T, PK> {
 	private Class<T> entityClass;
 	@Autowired

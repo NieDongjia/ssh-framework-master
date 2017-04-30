@@ -15,27 +15,22 @@ import javax.persistence.Table;
 @Table(name = "T_BD_UserInfo")
 public class UserInfo extends BaseEntity{
 	private static final long serialVersionUID = 1L;
-	private String name;
 	private String password;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	private String realName;
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public String getRealName() {
+		return realName;
+	}
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
 	@Override
 	public String toString() {
-		return "UserInfo [name=" + name + ", password=" + password + "]";
+		return "UserInfo [password=" + password + ", realName=" + realName + "]";
 	}
 }
