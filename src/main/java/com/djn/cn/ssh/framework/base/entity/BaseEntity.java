@@ -26,9 +26,9 @@ import org.hibernate.annotations.GenericGenerator;
 @MappedSuperclass  
 public class BaseEntity implements Serializable{  
 	private static final long serialVersionUID = 1L;
-	/** ID */  
+	/** ID */
     private String id;  
-    /**  创建日期  */  
+    /**  创建日期  */ 
     private Date createDate = new Date();  
     /**  最后修改日期 */  
     private Date lastUpdateTime;  
@@ -40,9 +40,8 @@ public class BaseEntity implements Serializable{
     private UserInfo Creator;
     /**最后修改者*/
     private UserInfo lastUpdateUser;
-    
     @Id  
-    @Column(length = 36, nullable = true)  
+    @Column(name="FID",length = 36, nullable = true)  
     @GeneratedValue(generator = "uuid")  
     @GenericGenerator(name = "uuid", strategy = "uuid")  
     public String getId() {  
@@ -53,7 +52,7 @@ public class BaseEntity implements Serializable{
         this.id = id;  
     }  
   
-    @Column(updatable = false)  
+    @Column(name="FCreateDate",updatable = false)  
     public Date getCreateDate() {  
         return createDate;  
     }  
@@ -61,7 +60,7 @@ public class BaseEntity implements Serializable{
     public void setCreateDate(Date createDate) {  
         this.createDate = createDate;  
     }  
-  
+	@Column(name="FLastUpdateTime")
     public Date getLastUpdateTime() {
 		return lastUpdateTime;
 	}
@@ -69,7 +68,7 @@ public class BaseEntity implements Serializable{
 	public void setLastUpdateTime(Date lastUpdateTime) {
 		this.lastUpdateTime = lastUpdateTime;
 	}
-
+	@Column(name="FName")
 	public String getName() {
 		return name;
 	}
@@ -77,7 +76,7 @@ public class BaseEntity implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@Column(name="FDescription")
 	public String getDescription() {
 		return description;
 	}
@@ -85,8 +84,8 @@ public class BaseEntity implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="creatorId")
+    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="FCreatorID")
 	public UserInfo getCreator() {
 		return Creator;
 	}
@@ -95,8 +94,8 @@ public class BaseEntity implements Serializable{
 		Creator = creator;
 	}
 
-    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="lastUpdateUserId")
+    @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="FLastUpdateUserID")
 	public UserInfo getLastUpdateUser() {
 		return lastUpdateUser;
 	}

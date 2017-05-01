@@ -24,26 +24,25 @@ public class UserInfoServiceTest {
   
 
     	// 8ad382cf5bbe5e6d015bbe5e72090000
-    	UserInfo admin = iUserInfoService.get("8ad382cf5bbec719015bbec71f720000");
-    	System.out.println(admin);
+//    	UserInfo admin = iUserInfoService.get("8ad382cf5bbec719015bbec71f720000");
+//    	System.out.println(admin);
       	UserInfo userInfo = new UserInfo();
-    	userInfo.setName("niedongjia");
+    	userInfo.setName("admin");
     	userInfo.setPassword(EncryptUtil.encryptToMD5("123456"));
-    	userInfo.setRealName("聂冬佳");
-    	userInfo.setCreator(admin);
-    	userInfo.setLastUpdateUser(admin);
+    	userInfo.setRealName("管理员");
+//    	userInfo.setCreator(admin);
+//    	userInfo.setLastUpdateUser(admin);
     	System.out.println(iUserInfoService.save(userInfo)); // 8ad382cf5bbec8e3015bbec8e7ab0000
 //    	
     }
     @Test
     public void get(){
     	
-    	
     	// 8ad382cf5bbe5e6d015bbe5e72090000
-    	UserInfo admin = iUserInfoService.get("8ad382cf5bbec8e3015bbec8e7ab0000");
-    	System.out.println(admin);
-    	System.out.println(admin.getCreator());
-    	System.out.println(admin.getLastUpdateUser());
+//    	UserInfo admin = iUserInfoService.get("8ad382cf5bbec8e3015bbec8e7ab0000");
+//    	System.out.println(admin);
+//    	System.out.println(admin.getCreator());
+//    	System.out.println(admin.getLastUpdateUser());
 //    	UserInfo userInfo = new UserInfo();
 //    	userInfo.setName("niedongjia");
 //    	userInfo.setPassword(EncryptUtil.encryptToMD5("123456"));
