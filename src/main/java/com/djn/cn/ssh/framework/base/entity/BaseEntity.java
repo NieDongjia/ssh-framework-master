@@ -37,7 +37,7 @@ public class BaseEntity implements Serializable{
     /** 名称*/
     private String name;
     /**创建者*/
-    private UserInfo Creator;
+    private UserInfo creator;
     /**最后修改者*/
     private UserInfo lastUpdateUser;
     @Id  
@@ -86,20 +86,17 @@ public class BaseEntity implements Serializable{
 	}
     @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="FCreatorID")
-	public UserInfo getCreator() {
-		return Creator;
+    public UserInfo getCreator() {
+		return creator;
 	}
-
 	public void setCreator(UserInfo creator) {
-		Creator = creator;
+		this.creator = creator;
 	}
-
     @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinColumn(name="FLastUpdateUserID")
 	public UserInfo getLastUpdateUser() {
 		return lastUpdateUser;
 	}
-
 	public void setLastUpdateUser(UserInfo lastUpdateUser) {
 		this.lastUpdateUser = lastUpdateUser;
 	}
