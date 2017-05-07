@@ -23,11 +23,11 @@ public class IndexController extends BaseController {
     @Autowired  
     private IUserInfoService iUserInfoService;  
 	@RequestMapping("index")
-	public String toIndex() {
-    	UserInfo admin = iUserInfoService.get("8ad382cf5bbec8e3015bbec8e7ab0000");
-    	System.out.println(admin);
-    	System.out.println(admin.getCreator());
-    	System.out.println(admin.getLastUpdateUser());
+	public String toIndex() {               
+//    	UserInfo admin = iUserInfoService.get("402801815bbfb8e8015bbfb8f0730000");
+//    	System.out.println(admin);
+//    	System.out.println(admin.getCreator());
+//    	System.out.println(admin.getLastUpdateUser());
 		return "/index";
 	}
 }
