@@ -10,7 +10,7 @@ public interface IBaseService<T, PK extends Serializable> {
 	 *            记录ID
 	 * @return 实体对象
 	 */
-	public T get(PK id);
+	T get(PK id);
 
 	/**
 	 * 保存实体对象.
@@ -19,5 +19,5 @@ public interface IBaseService<T, PK extends Serializable> {
 	 *            对象
 	 * @return ID
 	 */
-	public PK save(T entity);
+	 PK save(T entity);
 }

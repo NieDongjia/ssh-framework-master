@@ -12,7 +12,7 @@ import com.djn.cn.ssh.framework.base.entity.UserInfo;
 import com.djn.cn.ssh.framework.base.service.IUserInfoService;
 import com.djn.cn.ssh.framework.base.util.EncryptUtil;
 
-@SuppressWarnings("unused")
+
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration(locations = { "classpath:spring.xml", "classpath:spring-hibernate.xml" }) 
 public class UserInfoServiceTest {
