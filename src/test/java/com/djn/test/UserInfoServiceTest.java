@@ -52,4 +52,8 @@ public class UserInfoServiceTest {
 //    	System.out.println(iUserInfoService.save(userInfo)); // 8ad382cf5bbec8e3015bbec8e7ab0000
 //    	
     }
+    @Test
+    public void getAll(){
+    	System.out.println(iUserInfoService.get("402801815bbfb8e8015bbfb8f0730000"));
+    }
 }
