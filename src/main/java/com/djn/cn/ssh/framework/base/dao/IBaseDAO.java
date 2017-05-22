@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @param <T>
  * @param <PK>
  */
-public interface IBaseDao<T, PK extends Serializable> {  
+public interface IBaseDAO<T, PK extends Serializable> {  
 
   /** 
    * 根据ID获取实体对象. 

@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.djn.cn.ssh.framework.base.dao.IBaseDao;
+import com.djn.cn.ssh.framework.base.dao.IBaseDAO;
 import com.djn.cn.ssh.framework.base.service.IBaseService;
 
 public class BaseServiceImpl<T, PK extends Serializable> implements IBaseService<T, PK>{  
 	@Autowired
-    private IBaseDao<T, PK> baseDao;  
+    private IBaseDAO<T, PK> baseDao;  
       
-    public IBaseDao<T, PK> getBaseDao() {  
+    public IBaseDAO<T, PK> getBaseDao() {  
         return baseDao;  
     }  
       
-    public void setBaseDao(IBaseDao<T, PK> baseDao) {  
+    public void setBaseDao(IBaseDAO<T, PK> baseDao) {  
         this.baseDao = baseDao;  
     }  
     public T get(PK id) {  

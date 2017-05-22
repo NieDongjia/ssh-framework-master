@@ -29,7 +29,7 @@ public class BaseEntity implements Serializable{
 	/** ID */
     private String id;  
     /**  创建日期  */ 
-    private Date createDate = new Date();  
+    private Date createDate;  
     /**  最后修改日期 */  
     private Date lastUpdateTime;  
     /** 描述 */

@@ -9,15 +9,15 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
-import com.djn.cn.ssh.framework.base.dao.IBaseDao;
+import com.djn.cn.ssh.framework.base.dao.IBaseDAO;
 
-public class BaseDaoImpl<T, PK extends Serializable> implements IBaseDao<T, PK> {
+public class BaseDAOImpl<T, PK extends Serializable> implements IBaseDAO<T, PK> {
 	private Class<T> entityClass;
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@SuppressWarnings("unchecked")
-	public BaseDaoImpl() {
+	public BaseDAOImpl() {
 		this.entityClass = null;
 		Class<?> c = getClass();
 		Type type = c.getGenericSuperclass();
