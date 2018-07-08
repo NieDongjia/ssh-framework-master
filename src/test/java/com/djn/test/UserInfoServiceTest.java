@@ -53,7 +53,7 @@ public class UserInfoServiceTest {
 //    	
     }
     @Test
-    public void getAll(){
-    	System.out.println(iUserInfoService.get("402801815bbfb8e8015bbfb8f0730000"));
+    public void getAll(){                              //402801815bbfb8e8015bbfb8f0730000
+    	System.out.println("AAAAA:"+iUserInfoService.get("402801815bbfb8e8015bbfb8f0730000"));
     }
 }
